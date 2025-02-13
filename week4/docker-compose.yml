@@ -2,7 +2,7 @@ version: "3.8"
 volumes:
   pgData:
 services:
-  postgres: 
+  postgres:
     image: postgres:16.4-alpine3.20
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
@@ -17,7 +17,11 @@ services:
     networks:
       - bootcamp_network
     healthcheck:
-      test: ["CMD-SHELL", "sh -c 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'"]
+      test:
+        [
+          "CMD-SHELL",
+          "sh -c 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'",
+        ]
       interval: 10s
       timeout: 3s
       retries: 3
