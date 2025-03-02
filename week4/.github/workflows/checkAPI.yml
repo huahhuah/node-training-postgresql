@@ -28,7 +28,11 @@ jobs:
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
+<<<<<<< HEAD
           --health-retries 5
+=======
+          --health-retries 5      
+>>>>>>> b7f3ed24af33bb9098882e7d03ee36118ff097d9
     steps:
       - uses: actions/checkout@v4
       - name: 設定 Node.js
