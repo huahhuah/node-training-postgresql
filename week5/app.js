@@ -10,6 +10,7 @@ const userRouter = require("./routes/users");
 const adminRouter = require("./routes/admin");
 const coachRouter = require("./routes/coach");
 const coursesRouter = require("./routes/courses.js");
+const uploadRouter = require("./routes/upload.js");
 
 const app = express();
 app.use(cors());
@@ -37,7 +38,8 @@ app.use("/api/coaches/skill", skillRouter);
 app.use("/api/users", userRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/coaches", coachRouter);
-app.use("/api/course", coursesRouter);
+app.use("/api/courses", coursesRouter);
+app.use("/api/upload", uploadRouter);
 
 //404
 app.use((req, res, next) => {
